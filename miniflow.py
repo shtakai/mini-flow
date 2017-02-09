@@ -11,4 +11,18 @@ class Node(object):
 	# For each inbound Node here, add this Node as an outbound Node
 	# to _that_ Node.
 	for n in self.inbound_nodes:
-		n.outbound_nodes.append(self)		
+		n.outbound_nodes.append(self)	
+	
+	# Each node calculates a value to represent its output
+	# Initialize the value to None to indicate that it exists but hasn't been set up yet
+	self.value = None
+
+	# Each node will need to be able to pass values forward and perform backpropagation
+	def forward(self):
+		'''
+		Forward Propagation
+
+		Computes the output value based on inbound nodes and
+		stores the result in self.value 
+		'''
+		raise NotImplemented
