@@ -1,3 +1,4 @@
+# Node holds the base set of properties that every node holds.
 class Node(object):
 	def __init__(self):
 	# Each node recieves inputs from multiple other nodes
@@ -26,3 +27,8 @@ class Node(object):
 		stores the result in self.value 
 		'''
 		raise NotImplemented
+
+# Input is a subclass of Node that performs calculations and holds values
+class Input(Node):
+	def __init__(self):
+		Node.__init__(self)
