@@ -29,6 +29,28 @@ class Node(object):
 		raise NotImplemented
 
 # Input is a subclass of Node that performs calculations and holds values
+# The Input subclass holds a value, such as a data feature or a model parameter(weight/bias)
 class Input(Node):
 	def __init__(self):
-		Node.__init__(self)
+	'''
+	An Input Node has no inbound nodes,
+	hence we do not need to pass anything to the Node instantiator
+	'''
+	Node.__init__(self)
+
+	'''
+	Input node is the only node that may receive its value as an argument to forward().
+	
+	All other node implications should calculate their values from 
+	the previous nodes, using self.inbound_nodes
+	'''
+	def forward(self, value = None):
+		'''
+		The value can be set explicitly or with the forward() method. 
+		This value is then fed through the rest of the neural network.
+		'''
+		if value is not None:
+			self.value = value
+
+
+
