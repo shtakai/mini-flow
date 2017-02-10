@@ -118,5 +118,8 @@ def topological_sort(feed_dict):
 #
 # The output node's value is returned
 def forward_pass(output_node, sorted_nodes):
+	for n in sorted_nodes:
+		n.forward()
+
 	return output_node.value
 
