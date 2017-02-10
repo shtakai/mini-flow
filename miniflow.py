@@ -1,3 +1,5 @@
+#miniflow.py
+
 # Node holds the base set of properties that every node holds.
 class Node(object):
 	def __init__(self):
