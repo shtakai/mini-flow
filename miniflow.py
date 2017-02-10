@@ -52,5 +52,14 @@ class Input(Node):
 		if value is not None:
 			self.value = value
 
+# The topological_sort function implements the topological sorting using Kahn's Algorithm
+# It returns a sorted list of nodes in which all the calculation can run in series
+# It takes in a feed_dict, which is how we initially set a value for an Input node.
+# feed_dict is represented by the Python dictionary data structure
+def topological_sort(feed_dict):
+	L = []
+	return L	
+
+
 
 
