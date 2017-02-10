@@ -109,3 +109,14 @@ def topological_sort(feed_dict):
 			S.add(m)
 
 	return L
+
+# The forward_pass method can also be used to run values through the graphs
+# It performs a forward pass through a list of sorted nodes
+# It accepts two arguments:
+#	output_node: The output node of the graph (no outgoing edges).
+# 	sorted_node: A topologically sorted list of nodes.
+#
+# The output node's value is returned
+def forward_pass(output_node, sorted_nodes):
+	return output_node.value
+
