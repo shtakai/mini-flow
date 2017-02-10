@@ -78,9 +78,34 @@ def topological_sort(feed_dict):
 		return L (topically sorted order)
 	'''
 	
+	input_nodes = [n for n in feed_dict.keys()]	
+	G = {}
+	nodes = [n for n in input_nodes]
+	while len(nodes) > 0:
+		n = nodes.pop(0)
+		if n not in G:
+			G[n] = {'in': set(), 'out': set()}
+		
+		for m in n.outbound_nodes:for m in n.outbound_nodes:
+			if m not in G:	
+				G[m] = {'in': set(), 'out': set()}
+			G[n]['out'].add(m)
+			G[m]['in'].add(n)
+			nodes.append(m)
+	
 	L = []
-	return L	
+	S = set(input_nodes)
+	while len(S) > 0:
+	n = S.pop()
+	
+	if isinstance(n, Input):
+		n.value = feed_dict[n]
+	
+	L.append(n)
+        for m in n.outbound_nodes:
+		G[n]['out'].remove(m)
+		G[m]['in'].remove(n)
+		if len(G[m]['in']) == 0:
+			S.add(m)
 
-
-
-
+	return L
