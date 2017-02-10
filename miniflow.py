@@ -54,10 +54,21 @@ class Input(Node):
 		if value is not None:
 			self.value = value
 
+# A simple artificial neuron depends on 3 components
+# 	- Inputs, x (vector)
+# 	- Weights, w (vector)
+# 	- Bias, b (scalar)
+#
+# The output, is just the weighted sum of the inputs plus the bias
 class Linear(Node):
 	def __init__(self, inputs, weights, bias):
 		Node.__init__(self, [inputs, weights, bias])
 	
+	'''
+	The weights and bias properties here are not numbers,
+	they are references to other nodes.
+	The weight and bias values are stored within the respective values
+	'''
 	def forward(self):
 		inputs = self.inbound_nodes[0].value
 		weights = self.inbound_nodes[1].value
