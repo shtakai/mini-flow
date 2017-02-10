@@ -57,6 +57,27 @@ class Input(Node):
 # It takes in a feed_dict, which is how we initially set a value for an Input node.
 # feed_dict is represented by the Python dictionary data structure
 def topological_sort(feed_dict):
+	'''
+	Kahn's algorithm
+	https://en.wikipedia.org/wiki/Topological_sorting#Kahn.27s_algorithm
+	
+	L <- Empty list that will contain the sorted elements
+	S <- Set of all nodes with no incomming edges
+	while S is non-empty do
+		remove a node n from S
+		add n to tail of L
+		
+		for each node with an edge e from n to m do
+		remove edge e from the graph
+		if m has no incoming edge then
+			insert m into S
+		
+	if graph has edges then
+		return error (graph has at least one cycle)
+	else
+		return L (topically sorted order)
+	'''
+	
 	L = []
 	return L	
 
