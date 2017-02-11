@@ -8,5 +8,8 @@ Backpropagation is the process by which neural networks update the weights of th
 
 Differentiable graphs are graphs where the nodes are differentiable functions. They are also useful as visual aids for understanding and calculating complicated derivatives. This is the fundamental abstraction of TensorFlow - it's a framework for creating differentiable graphs.
 
-![Nueral Network](https://upload.wikimedia.org/wikipedia/commons/9/99/Neural_network_example.svg)
+<p align="center">
+	<img src = "https://upload.wikimedia.org/wikipedia/commons/9/99/Neural_network_example.svg">
+</p>
+
 
