@@ -1,5 +1,7 @@
 # MiniFlow
 
+[![GuardRails badge](https://badges.production.guardrails.io/shtakai/mini-flow.svg)](https://www.guardrails.io)
+
 Miniflow is a neural network library I built from scratch. MiniFlow, behaves much like TensorFlow, Google's deep learning library.
 
 My objective to start this project was to demistify neural networks and the concepts assosciated with it such as backpropagation and differentiable graphs.
